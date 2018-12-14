@@ -18,7 +18,6 @@ public class Server extends AbstractVerticle {
         Launcher.executeCommand("run",Server.class.getName());
     }
 
-
     @Override
     public void start() throws Exception {
         VocabularyServiceGrpc.VocabularyServiceImplBase service = new VocabularyServiceGrpc.VocabularyServiceImplBase() {
