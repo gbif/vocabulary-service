@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "org.gbif.vocabulary.grpc";
+package org.gbif.vocabulary.grpc;
+
+
+service VocabularyService {
+    rpc Concepts(VocabularyKey) returns (stream Concept){}
+}
+
+
+message VocabularyKey {
+    int32 key = 1;
+}
+
+message Vocabulary {
+    int32 key = 1;
+    string namespace = 2;
+    string name = 3;
+    string label = 4;
+    string definition = 5;
+    string external_definition_url = 6;
+    string editorial_notes = 7;
+    google.protobuf.Timestamp created = 8;
+    string created_by = 9;
+    google.protobuf.Timestamp modified = 10;
+    string modified_by = 11;
+    google.protobuf.Timestamp deleted = 12;
+}
+
+message Concept {
+
+    int32 vocabulary_key = 1;
+    int32 parent_key = 2;
+    int32 replaced_by_key = 3;
+    string name = 4;
+    map<string,string> label = 5;
+    map<string,string> alternative_label = 6;
+    map<string,string> definition = 7;
+    string external_definition_url = 8;
+    repeated string same_as_url = 9;
+    repeated string editorial_notes = 10;
+    google.protobuf.Timestamp created = 11;
+    string created_by = 12;
+    google.protobuf.Timestamp modified = 13;
+    string modified_by = 14;
+    google.protobuf.Timestamp deleted = 15;
+}
