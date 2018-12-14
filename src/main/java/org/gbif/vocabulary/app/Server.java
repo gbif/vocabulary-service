@@ -10,6 +10,9 @@ import io.vertx.core.Launcher;
 import io.vertx.grpc.VertxServer;
 import io.vertx.grpc.VertxServerBuilder;
 
+/**
+ * Test server.
+ */
 public class Server extends AbstractVerticle {
 
     private VertxServer vertxServer;
