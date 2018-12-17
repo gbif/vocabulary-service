@@ -1,4 +1,7 @@
 pipeline {
+    triggers {
+       pollSCM('') // Enabling being build on Push
+    }
     agent any
     tools {
       maven 'Maven3.2'
