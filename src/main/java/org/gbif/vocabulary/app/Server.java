@@ -25,6 +25,7 @@ public class Server extends AbstractVerticle {
             public void concepts(VocabularyKey request, StreamObserver<Concept> responseObserver) {
                 responseObserver.onNext(Concept.newBuilder().setName("C1").build());
                 responseObserver.onNext(Concept.newBuilder().setName("C2").build());
+                responseObserver.onNext(Concept.newBuilder().setName("C3").build());
                 responseObserver.onCompleted();
                 super.concepts(request, responseObserver);
             }
